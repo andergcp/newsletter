@@ -1,0 +1,1 @@
+{"version":3,"file":"statistic-response.dto.js","sourceRoot":"","sources":["../../../../src/modules/statistic/dtos/statistic-response.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAAoD;AAG7C,IAAM,qBAAqB,GAA3B,MAAM,qBAAqB;CAMjC,CAAA;AANY,sDAAqB;AAEhC;IADC,IAAA,eAAK,GAAE;;8DACgB;AAGxB;IADC,IAAA,eAAK,GAAE;;iEACmB;gCALhB,qBAAqB;IADjC,IAAA,oBAAU,GAAE;GACA,qBAAqB,CAMjC"}

@@ -1,0 +1,64 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type NewsletterResponse {
+  id: String!
+  fileUrl: String!
+  name: String!
+  recipientsEmails: [String!]!
+  subject: String!
+  sendAt: DateTime
+  status: NewsletterStatus
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+enum NewsletterStatus {
+  FAILED
+  PENDING
+  SENT
+}
+
+type GetStatisticsResponse {
+  emailsDelivered: Float!
+  recipientsQuantity: Float!
+}
+
+type SubscriptionResponse {
+  id: String!
+  email: String!
+  newsletterId: String!
+  status: SubscriptionStatus!
+}
+
+enum SubscriptionStatus {
+  SUBSCRIBED
+  UNSUBSCRIBED
+}
+
+type Query {
+  findNewsletters: [NewsletterResponse!]!
+  getStatistics: GetStatisticsResponse!
+  findSubscriptionsByEmail(email: String!): SubscriptionResponse!
+}
+
+type Mutation {
+  createNewsletter(createNewsletterInput: CreateNewsletterInput!): NewsletterResponse!
+  unsubscribeMany(unsubscribeManyInput: UnsubscribeManyInput!): Boolean!
+}
+
+input CreateNewsletterInput {
+  fileUrl: String!
+  name: String!
+  recipientsEmails: [String!]!
+  subject: String!
+  sendAt: DateTime
+}
+
+input UnsubscribeManyInput {
+  subscriptionIds: [String!]!
+}
