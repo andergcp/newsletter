@@ -1,4 +1,3 @@
-
 # Stori Newsletter
 
 Hola Juli, Cristian y todo el equipo Stori!
@@ -6,42 +5,49 @@ Hola Juli, Cristian y todo el equipo Stori!
 ### TL;DR
 
 Puedes correr el proyecto con Docker. Para hacerlo sigue estos pasos:
+
 1. Descarga el proyecto
-  ```bash
-  git clone https://github.com/andergcp/newsletter.git
-  ```
-2. Ve a la carpeta ```backend-stori``` y renombra el archivo ```.env.example``` a ```.env```
 
-3. Ve a la carpeta ```frontend-stori``` y renombra el archivo ```.env.example``` a ```.env```
+```bash
+git clone https://github.com/andergcp/newsletter.git
+```
 
-4. Inicia Docker
+2. Ve a la carpeta `backend-stori` y renombra el archivo `.env.example` a `.env`
 
-5. Corre el siguiente comando:
+3. Ve a la carpeta `frontend-stori` y renombra el archivo `.env.example` a `.env`
+
+4. En los archivos .env agrega los valores que fueron enviados al correo, para las siguiente variables:
+   `NEXT_PUBLIC_AWS_ACCESS_KEY_ID=`
+   `NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY=`
+   `SENDGRID_API_KEY=`
+
+5. Inicia Docker en tu computador
+
+6. Corre el siguiente comando:
+
 ```bash
   docker compose up --build
-  ```
-  
+```
+
 6. Listo! Ya puede acceder a la aplicación web en http://localhost:3001/
 
 **Bonus!**
 
-Quieres encontrar la documentación de la API GraphQL?
-
-Ve a http://localhost:3000/graphql y allí encuentras la documentación generada en Playground.
+Ve a http://localhost:3000/graphql y allí encuentras la documentación generada en Playground para la API de GrapgQL.
 
 ### Resumen tecnología usadas
 
-* Frontend: Nextjs
+- Frontend: Nextjs
 
-* Backend: Nestjs
+- Backend: Nestjs
 
-* Base de datos: Mongo
+- Base de datos: Mongo
 
-* API: GraphQL
+- API: GraphQL
 
 ### Organización del proyecto
 
-**En el backend** intenté aplicar algunos principios de arquitecturas limpias, hexagonales y DDD. 
+**En el backend** intenté aplicar algunos principios de arquitecturas limpias, hexagonales y DDD.
 
 **¿Cómo?**
 
