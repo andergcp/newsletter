@@ -3,7 +3,6 @@ import { Model } from 'mongoose';
 import { OnApplicationBootstrap } from '@nestjs/common';
 
 import { DatabaseServices } from '@core/interfaces';
-import { MongoRepository } from './repositories/mongo.repository';
 import {
   Newsletter,
   NewsletterDocument,
@@ -16,6 +15,7 @@ import { Newsletter as NewsletterEntity } from '@modules/newsletter/newsletter.e
 import { Statistic as StatisticEntity } from '@modules/statistic/statistic.entity';
 import { Subscription as SubscriptionEntity } from '@modules/subscription/subscription.entity';
 import {
+  MongoRepository,
   NewsletterMongoRepository,
   StatisticMongoRepository,
   SubscriptionMongoRepository,

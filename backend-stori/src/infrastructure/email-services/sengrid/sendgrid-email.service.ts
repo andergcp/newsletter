@@ -3,13 +3,13 @@ import { MailService } from '@sendgrid/mail';
 import { AttachmentData } from '@sendgrid/helpers/classes/attachment';
 import { MailDataRequired } from '@sendgrid/helpers/classes/mail';
 
+import { ConfigService } from '@nestjs/config';
 import { EmailData, EmailService } from '@core/interfaces';
 import { getBasicHtmlEmailTemplate } from '@core/services/email-service/email.template';
 import {
   CloudService,
   CloudServiceSymbol,
 } from '@core/interfaces/cloud-service.base';
-import { ConfigService } from '@nestjs/config';
 
 const FROM_EMAIL = 'andergcp@gmail.com';
 
@@ -63,15 +63,6 @@ export class SengridEmailService implements EmailService {
           return false;
         }
       }
-      // const mailData: MailDataRequired = {
-      //   to: recipients,
-      //   from: FROM_EMAIL,
-      //   subject,
-      //   html: htmlEmailTemplate || getBasicHtmlEmailTemplate(unsubscribeUrl),
-      //   attachments,
-      // };
-
-      // const response = await this.sendgridMail.send(mailData);
       return true;
     } catch (error) {
       console.error(error);

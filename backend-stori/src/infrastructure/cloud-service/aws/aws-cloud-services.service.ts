@@ -1,4 +1,3 @@
-// import { S3 } from 'aws-sdk';
 import { GetObjectCommand, S3Client } from '@aws-sdk/client-s3';
 
 import { Injectable } from '@nestjs/common';
@@ -26,8 +25,6 @@ export class AwsCloudService implements CloudService {
   async downloadFile(fileUrl: string): Promise<string> {
     try {
       const s3 = new S3Client({
-        // accessKeyId: this.accessKeyId,
-        // secretAccessKey: this.secretAccessKey,
         region: this.region,
         credentials: {
           accessKeyId: this.accessKeyId,

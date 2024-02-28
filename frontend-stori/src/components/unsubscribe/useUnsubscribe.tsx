@@ -3,7 +3,7 @@
 import { gql } from "@/graphql/__generated__/gql";
 import { useMutation, useQuery } from "@apollo/client";
 import { FormikHelpers, useFormik } from "formik";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // GraphQL
 const UNSUBSCRIBE_MANY = gql(`
@@ -29,7 +29,7 @@ export function useUnsubscribe(email: string) {
   const [unsubscribeMany] = useMutation(UNSUBSCRIBE_MANY);
   const { loading, error, data, refetch } = useQuery(FIND_SUBSCRIPTIONS, { variables: { email } });
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
-  
+
   const formik = useFormik({
     initialValues: {
       subscriptionIds: [],
@@ -46,12 +46,12 @@ export function useUnsubscribe(email: string) {
       setSubmitting(false)
     }
   })
-  
+
   return {
     error,
     formik,
     loading,
-    showSuccessAlert, 
+    showSuccessAlert,
     subscriptions: data,
     setShowSuccessAlert,
   };

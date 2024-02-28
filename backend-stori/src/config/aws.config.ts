@@ -1,5 +1,5 @@
-import { registerAs } from '@nestjs/config';
 import * as Joi from 'joi';
+import { registerAs } from '@nestjs/config';
 import { AwsConfig } from './types/aws.type';
 
 export default registerAs('aws', (): AwsConfig => {

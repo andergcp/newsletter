@@ -1,7 +1,6 @@
 import {
   ExceptionBase,
   ARGUMENT_INVALID,
-  // ARGUMENT_NOT_PROVIDED,
   NOT_FOUND,
   INTERNAL_SERVER_ERROR,
 } from '.';
@@ -9,10 +8,6 @@ import {
 export class InvalidArgumentException extends ExceptionBase {
   readonly code = ARGUMENT_INVALID;
 }
-
-// export class ArgumentNotProvidedException extends ExceptionBase {
-//   readonly code = ARGUMENT_NOT_PROVIDED;
-// }
 
 export class NotFoundException extends ExceptionBase {
   static readonly message = 'Not found';

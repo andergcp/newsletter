@@ -2,7 +2,7 @@
 import { useMutation, useQuery } from '@apollo/client';
 import { FormikHelpers, useFormik } from 'formik';
 import * as yup from 'yup';
-import { CreateNewsletterInput, Mutation, MutationCreateNewsletterArgs } from '@/graphql/__generated__/graphql';
+import { CreateNewsletterInput } from '@/graphql/__generated__/graphql';
 import { gql } from '@/graphql/__generated__/gql';
 import { useState } from 'react';
 import { UploadFile } from 'antd/es/upload';
@@ -61,17 +61,19 @@ export function useNewsletter() {
     },
     validationSchema,
     onSubmit: async (values: CreateNewsletterInput, formikHelpers: FormikHelpers<CreateNewsletterInput>) => {
-      
+
       try {
         // validationSchema.validateSync(values);
-        await createNewsletter({ variables: {
-          input: {
-            name: values.name,
-            subject: values.subject,
-            fileUrl: values.fileUrl,
-            recipientsEmails: values.recipientsEmails,
+        await createNewsletter({
+          variables: {
+            input: {
+              name: values.name,
+              subject: values.subject,
+              fileUrl: values.fileUrl,
+              recipientsEmails: values.recipientsEmails,
+            }
           }
-        }});
+        });
         refetch();
         setEmailList([]);
         setFileList([]);
@@ -103,16 +105,16 @@ export function useNewsletter() {
 
   return {
     allowedExtensions: ALLOWED_EXTENSIONS,
-    data, 
-    emailInputValue, 
-    emailList, 
-    error, 
-    fileList, 
-    formik, 
-    loading, 
+    data,
+    emailInputValue,
+    emailList,
+    error,
+    fileList,
+    formik,
+    loading,
     showSuccessAlert,
-    handleAddEmailClick, 
-    handleEmailDelete, 
+    handleAddEmailClick,
+    handleEmailDelete,
     refetch,
     setEmailInputValue,
     setFileList,

@@ -1,4 +1,5 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+
 import { NewsletterUseCases } from './newsletter.use-case';
 import { CreateNewsletterInput } from './dtos/newsletter-request.dto';
 import { NewsletterResponse } from './dtos/newsletter-response.dto';

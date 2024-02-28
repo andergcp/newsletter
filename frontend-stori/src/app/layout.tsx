@@ -1,6 +1,5 @@
 "use client";
 import { Inter } from "next/font/google";
-// import "./globals.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,8 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
-        className={inter.className}      
+      <body
+        className={inter.className}
         style={{
           backgroundColor: "#eef6fb",
         }}

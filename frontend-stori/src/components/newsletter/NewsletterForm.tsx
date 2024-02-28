@@ -1,17 +1,17 @@
 'use client';
-import { 
+import {
   Alert,
-  Box, 
-  Button, 
+  Box,
+  Button,
   Chip,
-  Container, 
-  IconButton, 
-  InputAdornment, 
-  Paper, 
-  SxProps, 
-  TextField, 
-  Theme, 
-  Tooltip, 
+  Container,
+  IconButton,
+  InputAdornment,
+  Paper,
+  SxProps,
+  TextField,
+  Theme,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import Add from '@mui/icons-material/Add';
@@ -21,24 +21,24 @@ import CheckIcon from '@mui/icons-material/Check';
 import { useNewsletter } from './useNewsletter'
 import Uploader from '../upload/Uploader';
 
-const boxFormStyle: SxProps<Theme> = {p: 10, backgroundColor: "white"}
+const boxFormStyle: SxProps<Theme> = { p: 10, backgroundColor: "white" }
 
 const NewsletterForm = () => {
   const {
-    allowedExtensions, 
-    emailList, 
-    fileList,
-    formik, 
+    allowedExtensions,
     emailInputValue,
-    showSuccessAlert,
-    handleAddEmailClick, 
-    handleEmailDelete,  
-    setEmailInputValue, 
+    emailList,
+    fileList,
+    formik,
+    setEmailInputValue,
     setFileList,
+    showSuccessAlert,
+    handleAddEmailClick,
+    handleEmailDelete,
   } = useNewsletter()
 
   return (
-    <Container maxWidth="sm" sx={{mt: 3}}>
+    <Container maxWidth="sm" sx={{ mt: 3 }}>
       <Paper component="form" sx={boxFormStyle} onSubmit={formik.handleSubmit}>
         <Typography variant="h5" gutterBottom color={"#1976d2"}>
           Create Newsletter
@@ -102,17 +102,17 @@ const NewsletterForm = () => {
             fileList={fileList}
             setFileList={setFileList}
           />
-          <Button 
-            type="submit" 
-            variant='contained' 
-            sx={{width: "50%", mx: "auto"} }
+          <Button
+            type="submit"
+            variant='contained'
+            sx={{ width: "50%", mx: "auto" }}
             disabled={!formik.isValid}
           >
             Submit
           </Button>
         </Box>
       </Paper>
-      {showSuccessAlert && 
+      {showSuccessAlert &&
         <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
           Newsletter created successfully!
         </Alert>

@@ -6,9 +6,8 @@ import {
   EmailService,
   EmailServiceSymbol,
 } from '@core/interfaces';
-import { Newsletter } from './newsletter.entity';
 import { CreateNewsletterInput } from './dtos/newsletter-request.dto';
-import { NewsletterStatus } from './newsletter.entity';
+import { Newsletter, NewsletterStatus } from './newsletter.entity';
 import { SubscriptionUseCases } from '@modules/subscription/subscription.use-case';
 import { StatisticUseCases } from '@modules/statistic/statistic.use-case';
 import {

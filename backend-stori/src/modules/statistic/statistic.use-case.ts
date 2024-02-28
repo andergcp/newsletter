@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+
 import { Statistic } from './statistic.entity';
 import { DatabaseServices, DatabaseServicesSymbol } from '@core/interfaces';
 import { CreateStatisticInput } from './dtos/statistic-request.dto';

@@ -1,8 +1,6 @@
 'use client';
-import { Container } from "@mui/material";
-// import UnsubscribeForm from "@/components/unsubscribe/UnsubscribeForm";
-
 import dynamic from 'next/dynamic';
+import { Container } from "@mui/material";
 
 const UnsubscribeFormUseSearchParams = dynamic(
   () => import('@/components/unsubscribe/UnsubscribeForm'),

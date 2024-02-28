@@ -8,20 +8,19 @@ import { useUnsubscribe } from "./useUnsubscribe";
 import { Alert, Box, Button, Checkbox } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 
-const boxFormStyle: SxProps<Theme> = {p: 10, backgroundColor: "white"}
+const boxFormStyle: SxProps<Theme> = { p: 10, backgroundColor: "white" }
 const UnsubscribeForm = () => {
   const searchParams = useSearchParams()
   const email = searchParams.get('email') || ''
-  const { 
-    error, 
-    formik, 
-    loading, 
+  const {
+    formik,
+    loading,
     showSuccessAlert,
     subscriptions,
   } = useUnsubscribe(email)
 
   return (
-    <Container maxWidth="sm" sx={{mt: 3}}>
+    <Container maxWidth="sm" sx={{ mt: 3 }}>
       <Paper component="form" sx={boxFormStyle} onSubmit={formik.handleSubmit}>
         <Typography variant="h5" gutterBottom>
           We are sorry to see you go
@@ -42,14 +41,14 @@ const UnsubscribeForm = () => {
               />
               <label htmlFor={subscription.id}>{subscription.newsletter.name}</label>
             </Box>
-        ))}
+          ))}
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
           <Button type="submit" variant="contained" color="primary" disabled={loading}>
             Unsubscribe
           </Button>
         </Box>
       </Paper>
-      {showSuccessAlert && 
+      {showSuccessAlert &&
         <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
           Successfully unsubscribed. We will miss you!
         </Alert>

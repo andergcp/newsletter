@@ -1,6 +1,6 @@
 import { Field, ObjectType, registerEnumType } from '@nestjs/graphql';
+
 import { SubscriptionStatus } from '../subscription.entity';
-// import { Newsletter } from '@modules/newsletter/newsletter.entity';
 import { NewsletterResponse } from '@modules/newsletter/dtos/newsletter-response.dto';
 
 @ObjectType()
