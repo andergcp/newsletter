@@ -1,4 +1,4 @@
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
 import { Newsletter } from '../model';
@@ -17,12 +17,12 @@ export class NewsletterMongoRepository extends MongoRepository<
   }
 
   toDomainEntity(
-    doc: Newsletter & { createdAt?: Date; updatedAt?: Date; _id: string },
+    doc: Newsletter & { createdAt?: Date; updatedAt?: Date; _id: ObjectId },
   ): NewsletterEntity {
     return new NewsletterEntity({
       createdAt: doc.createdAt,
       updatedAt: doc.updatedAt,
-      id: doc._id,
+      id: doc._id.toString(),
       props: {
         fileUrl: doc.fileUrl,
         name: doc.name,

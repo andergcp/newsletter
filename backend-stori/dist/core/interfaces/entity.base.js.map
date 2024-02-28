@@ -1,1 +1,0 @@
-{"version":3,"file":"entity.base.js","sourceRoot":"","sources":["../../../src/core/interfaces/entity.base.ts"],"names":[],"mappings":";;;AAaA,MAAsB,MAAM;IAM1B,YAAY,EACV,EAAE,EACF,SAAS,EACT,SAAS,EACT,KAAK,GAC0B;QAC/B,IAAI,CAAC,aAAa,CAAC,KAAK,CAAC,CAAC;QAC1B,MAAM,CAAC,MAAM,CAAC,IAAI,EAAE;YAClB,EAAE;YACF,SAAS;YACT,SAAS;YACT,KAAK;SACN,CAAC,CAAC;IACL,CAAC;CAGF;AAtBD,wBAsBC"}

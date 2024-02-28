@@ -1,4 +1,4 @@
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { MongoRepository } from './mongo.repository';
 import { Subscription } from '../model';
@@ -16,15 +16,15 @@ export class SubscriptionMongoRepository extends MongoRepository<
   }
 
   toDomainEntity(
-    doc: Subscription & { createdAt?: Date; updatedAt?: Date; _id: string },
+    doc: Subscription & { createdAt?: Date; updatedAt?: Date; _id: ObjectId },
   ): SubscriptionEntity {
     return new SubscriptionEntity({
       createdAt: doc.createdAt,
       updatedAt: doc.updatedAt,
-      id: doc._id,
+      id: doc._id.toString(),
       props: {
         email: doc.email,
-        newsletterId: doc.newsletterId,
+        newsletterId: doc.newsletterId.toString(),
         status: doc.status,
       },
     });

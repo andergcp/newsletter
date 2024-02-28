@@ -1,3 +1,0 @@
-export declare const ARGUMENT_INVALID = "GENERIC.ARGUMENT_INVALID";
-export declare const INTERNAL_SERVER_ERROR = "GENERIC.INTERNAL_SERVER_ERROR";
-export declare const NOT_FOUND = "GENERIC.NOT_FOUND";

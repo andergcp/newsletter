@@ -3,9 +3,15 @@ import { DatabaseServicesModule } from '@core/services/database-services/databas
 import { NewsletterUseCases } from './newsletter.use-case';
 import { SubscriptionModule } from '@modules/subscription/subscription.module';
 import { EmailServiceModule } from '@core/services/email-service/email-service.module';
+import { StatisticModule } from '@modules/statistic/statistic.module';
 
 @Module({
-  imports: [DatabaseServicesModule, SubscriptionModule, EmailServiceModule],
+  imports: [
+    DatabaseServicesModule,
+    SubscriptionModule,
+    EmailServiceModule,
+    StatisticModule,
+  ],
   providers: [NewsletterUseCases],
   exports: [NewsletterUseCases],
 })

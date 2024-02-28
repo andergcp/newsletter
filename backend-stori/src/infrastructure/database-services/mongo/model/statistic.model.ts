@@ -9,7 +9,7 @@ export class Statistic {
   deliveredAt: Date;
 
   @Prop()
-  recipients: number;
+  recipientsQuantity: number;
 }
 
 export const StatisticSchema = SchemaFactory.createForClass(Statistic);

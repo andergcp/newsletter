@@ -1,1 +1,0 @@
-{"version":3,"file":"subscription-request.dto.js","sourceRoot":"","sources":["../../../../src/modules/subscription/dtos/subscription-request.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAAmD;AAG5C,IAAM,oBAAoB,GAA1B,MAAM,oBAAoB;CAGhC,CAAA;AAHY,oDAAoB;AAE/B;IADC,IAAA,eAAK,EAAC,GAAG,EAAE,CAAC,CAAC,MAAM,CAAC,CAAC;;6DACI;+BAFf,oBAAoB;IADhC,IAAA,mBAAS,GAAE;GACC,oBAAoB,CAGhC"}

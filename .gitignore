@@ -43,6 +43,8 @@ out/
 
 # dist folder for NestJS
 /dist
+/backend-stori/dist
+/frontend-stori/dist
 
 # production
 /build

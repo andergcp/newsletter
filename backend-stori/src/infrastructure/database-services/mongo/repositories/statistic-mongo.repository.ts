@@ -1,4 +1,4 @@
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { MongoRepository } from './mongo.repository';
 import { Statistic } from '../model';
@@ -16,14 +16,14 @@ export class StatisticMongoRepository extends MongoRepository<
   }
 
   toDomainEntity(
-    doc: Statistic & { createdAt?: Date; updatedAt?: Date; _id: string },
+    doc: Statistic & { createdAt?: Date; updatedAt?: Date; _id: ObjectId },
   ): StatisticEntity {
     return new StatisticEntity({
       createdAt: doc.createdAt,
       updatedAt: doc.updatedAt,
-      id: doc._id,
+      id: doc._id.toString(),
       props: {
-        recipientsQuantity: doc.recipients,
+        recipientsQuantity: doc.recipientsQuantity,
         deliveredAt: doc.deliveredAt,
       },
     });

@@ -31,7 +31,7 @@ type GetStatisticsResponse {
 type SubscriptionResponse {
   id: String!
   email: String!
-  newsletterId: String!
+  newsletter: NewsletterResponse!
   status: SubscriptionStatus!
 }
 
@@ -43,7 +43,7 @@ enum SubscriptionStatus {
 type Query {
   findNewsletters: [NewsletterResponse!]!
   getStatistics: GetStatisticsResponse!
-  findSubscriptionsByEmail(email: String!): SubscriptionResponse!
+  findSubscriptionsByEmail(email: String!): [SubscriptionResponse!]!
 }
 
 type Mutation {

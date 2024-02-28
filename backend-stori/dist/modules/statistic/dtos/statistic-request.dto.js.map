@@ -1,1 +1,0 @@
-{"version":3,"file":"statistic-request.dto.js","sourceRoot":"","sources":["../../../../src/modules/statistic/dtos/statistic-request.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAAmD;AAG5C,IAAM,oBAAoB,GAA1B,MAAM,oBAAoB;CAMhC,CAAA;AANY,oDAAoB;AAE/B;IADC,IAAA,eAAK,GAAE;8BACK,IAAI;yDAAC;AAGlB;IADC,IAAA,eAAK,GAAE;;gEACmB;+BALhB,oBAAoB;IADhC,IAAA,mBAAS,GAAE;GACC,oBAAoB,CAMhC"}

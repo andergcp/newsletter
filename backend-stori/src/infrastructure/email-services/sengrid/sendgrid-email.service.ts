@@ -32,7 +32,6 @@ export class SengridEmailService implements EmailService {
     recipients,
     subject,
     attachmentUrl,
-    unsubscribeUrl,
     htmlEmailTemplate,
   }: EmailData): Promise<boolean> {
     try {
@@ -43,25 +42,45 @@ export class SengridEmailService implements EmailService {
       const attachments: AttachmentData[] = [
         {
           content: file,
-          filename: 'attachment.pdf',
+          filename: attachmentUrl,
           type: 'application/pdf',
           disposition: 'attachment',
         },
       ];
 
-      const mailData: MailDataRequired = {
-        to: recipients,
-        from: FROM_EMAIL,
-        subject,
-        html: htmlEmailTemplate || getBasicHtmlEmailTemplate(unsubscribeUrl),
-        attachments,
-      };
+      for (const recipient of recipients) {
+        const unsubscribeUrl = this._getUnsubscribeUrl(recipient);
+        const mailData: MailDataRequired = {
+          to: recipient,
+          from: FROM_EMAIL,
+          subject,
+          html: htmlEmailTemplate || getBasicHtmlEmailTemplate(unsubscribeUrl),
+          attachments,
+        };
 
-      const response = await this.sendgridMail.send(mailData);
-      return !response[0];
+        const response = await this.sendgridMail.send(mailData);
+        if (!response[0]) {
+          return false;
+        }
+      }
+      // const mailData: MailDataRequired = {
+      //   to: recipients,
+      //   from: FROM_EMAIL,
+      //   subject,
+      //   html: htmlEmailTemplate || getBasicHtmlEmailTemplate(unsubscribeUrl),
+      //   attachments,
+      // };
+
+      // const response = await this.sendgridMail.send(mailData);
+      return true;
     } catch (error) {
       console.error(error);
       return false;
     }
+  }
+
+  _getUnsubscribeUrl(email: string): string {
+    const frontendUrl = this.configService.get<string>('app.frontendUrl');
+    return `${frontendUrl}/unsubscribe?email=${email}`;
   }
 }

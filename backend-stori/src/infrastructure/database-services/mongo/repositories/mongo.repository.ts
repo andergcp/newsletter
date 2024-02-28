@@ -35,7 +35,9 @@ export abstract class MongoRepository<MongoModel, Entity extends { props: any }>
   }
 
   async update(id: string, entity: Entity) {
-    const doc = await this._repository.findByIdAndUpdate(id, entity);
+    const doc = await this._repository.findByIdAndUpdate(id, entity.props, {
+      new: true,
+    });
     return this.toDomainEntity(doc);
   }
 

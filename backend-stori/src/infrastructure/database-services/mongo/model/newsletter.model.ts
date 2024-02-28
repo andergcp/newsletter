@@ -10,7 +10,7 @@ export class Newsletter {
   @Prop()
   fileUrl: string;
 
-  @Prop({ unique: true })
+  @Prop()
   name: string;
 
   @Prop()
